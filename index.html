@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16A085" />
+    <link rel="icon" type="image/svg+xml" href="src/assets/icons/favicon.svg" />
+    <title>Calculator App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body class="theme-teal">
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">Mikens CALC</h1>
+        <p class="app__subtitle">Básica y avanzada • Responsive • Accesible</p>
+      </header>
+      
+      <!-- Visual Theme Picker -->
+      <div class="theme-picker" role="group" aria-label="Selector de tema (visual)">
+        <div class="theme-picker__swatches" data-theme-swatches>
+          <label class="swatch swatch--teal">
+            <input type="radio" name="theme" value="theme-teal" data-theme-option />
+            <span class="swatch__preview" aria-hidden="true"></span>
+            <span class="swatch__label">Teal</span>
+          </label>
+          <label class="swatch swatch--rose">
+            <input type="radio" name="theme" value="theme-rose" data-theme-option />
+            <span class="swatch__preview" aria-hidden="true"></span>
+            <span class="swatch__label">Rosa</span>
+          </label>
+          <label class="swatch swatch--amber">
+            <input type="radio" name="theme" value="theme-amber" data-theme-option />
+            <span class="swatch__preview" aria-hidden="true"></span>
+            <span class="swatch__label">Ámbar</span>
+          </label>
+          <label class="swatch swatch--violet">
+            <input type="radio" name="theme" value="theme-violet" data-theme-option />
+            <span class="swatch__preview" aria-hidden="true"></span>
+            <span class="swatch__label">Violeta</span>
+          </label>
+          <label class="swatch swatch--sky">
+            <input type="radio" name="theme" value="theme-sky" data-theme-option />
+            <span class="swatch__preview" aria-hidden="true"></span>
+            <span class="swatch__label">Cielo</span>
+          </label>
+        </div>
+      </div>
+
+      <section class="calculator" aria-label="Calculadora">
+        <div class="calculator__display" role="region" aria-live="polite">
+          <div class="display__secondary" data-display="secondary">&nbsp;</div>
+          <div class="display__primary" data-display="primary">0</div>
+        </div>
+
+        <div class="calculator__keypad" data-component="keypad">
+          <!-- Memory Row -->
+          <div class="keypad__row keypad__row--memory">
+            <button class="btn btn--ghost" data-action="memory-clear" aria-label="Memory Clear">MC</button>
+            <button class="btn btn--ghost" data-action="memory-recall" aria-label="Memory Recall">MR</button>
+            <button class="btn btn--ghost" data-action="memory-add" aria-label="Memory Plus">M+</button>
+            <button class="btn btn--ghost" data-action="memory-subtract" aria-label="Memory Minus">M-</button>
+          </div>
+
+          <!-- Advanced Row -->
+          <div class="keypad__row keypad__row--advanced">
+            <button class="btn" data-action="square" aria-label="Cuadrado">x²</button>
+            <button class="btn" data-action="sqrt" aria-label="Raíz cuadrada">√x</button>
+            <button class="btn" data-action="reciprocal" aria-label="Recíproco">1/x</button>
+            <button class="btn" data-action="power" aria-label="Potencia">x^y</button>
+          </div>
+
+          <!-- Main Grid -->
+          <div class="keypad__grid">
+            <button class="btn btn--danger" data-action="clear" aria-label="Borrar todo">AC</button>
+            <button class="btn" data-action="delete" aria-label="Borrar último">⌫</button>
+            <button class="btn" data-action="percent" aria-label="Porcentaje">%</button>
+            <button class="btn btn--op" data-action="operator" data-operator="/" aria-label="Dividir">÷</button>
+
+            <button class="btn" data-action="digit" data-digit="7">7</button>
+            <button class="btn" data-action="digit" data-digit="8">8</button>
+            <button class="btn" data-action="digit" data-digit="9">9</button>
+            <button class="btn btn--op" data-action="operator" data-operator="*" aria-label="Multiplicar">×</button>
+
+            <button class="btn" data-action="digit" data-digit="4">4</button>
+            <button class="btn" data-action="digit" data-digit="5">5</button>
+            <button class="btn" data-action="digit" data-digit="6">6</button>
+            <button class="btn btn--op" data-action="operator" data-operator="-" aria-label="Restar">−</button>
+
+            <button class="btn" data-action="digit" data-digit="1">1</button>
+            <button class="btn" data-action="digit" data-digit="2">2</button>
+            <button class="btn" data-action="digit" data-digit="3">3</button>
+            <button class="btn btn--op" data-action="operator" data-operator="+" aria-label="Sumar">+</button>
+
+            <button class="btn" data-action="sign" aria-label="Cambiar signo">±</button>
+            <button class="btn" data-action="digit" data-digit="0">0</button>
+            <button class="btn" data-action="decimal" aria-label="Decimal">.</button>
+            <button class="btn btn--equals" data-action="equals" aria-label="Igual">=</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="app__footer">
+        <small>Hecho por Mikens • Tema <span style="color:#16A085">#16A085</span></small>
+      </footer>
+    </main>
+
+    <script src="src/js/app.js"></script>
+  </body>
+  </html>
+
+
+
