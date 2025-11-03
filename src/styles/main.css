@@ -207,7 +207,7 @@ body{
 
 /* Pro visual theme picker (overrides) */
 .theme-picker{ margin-top: 12px; display: grid; gap: 12px; justify-items: center; color: var(--muted); }
-.theme-picker__swatches{ display: grid; grid-auto-flow: column; grid-auto-columns: minmax(110px, 1fr); gap: 16px; width: 100%; max-width: 660px; }
+.theme-picker__swatches{ display: grid; gap: 16px; width: 100%; max-width: 900px; grid-template-columns: repeat(2, minmax(110px, 1fr)); }
 
 /* Swatch card */
 .swatch{ position: relative; display: grid; gap: 6px; padding: 8px; background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; cursor: pointer; user-select: none; }
@@ -232,22 +232,45 @@ body{
 @media (min-width: 520px){
   .display__primary{ font-size: 2.6rem; }
   .calculator{ padding: 18px; }
+  .theme-picker__swatches{ grid-template-columns: repeat(3, minmax(120px, 1fr)); }
 }
 
 @media (max-width: 360px){
   .btn{ padding: 12px 10px; font-size: 1rem; }
 }
 
-@media (max-width: 640px){
-  .theme-picker__swatches{ grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-}
-
 @media (min-width: 900px){
-  .theme-picker__swatches{ grid-auto-columns: 140px; gap: 20px; max-width: 900px; }
+  .theme-picker__swatches{ grid-template-columns: repeat(5, minmax(140px, 1fr)); gap: 20px; max-width: 900px; }
   .swatch__preview{ height: 56px; }
   .swatch{ padding: 10px; }
   .swatch__label{ font-size: .9rem; }
 }
+
+body{ min-height: 100dvh; overflow-x: hidden; }
+
+@media (max-width: 640px){
+  .app{ padding: 12px 0 18px; }
+  .app__header{ margin-bottom: 12px; }
+  .display__primary{ font-size: 1.9rem; }
+  .calculator__display{ min-height: 80px; }
+  .btn{ min-height: 46px; font-size: 1rem; padding: 12px 10px; }
+  .theme-picker{ margin-top: 8px; }
+}
+
+.theme-picker{ margin-bottom: 16px; }
+@media (min-width: 520px){ .theme-picker{ margin-bottom: 20px; } }
+@media (min-width: 900px){ .theme-picker{ margin-bottom: 24px; } }
+
+body{ place-items: start center; }
+.app{ min-height: 100dvh; display: grid; grid-template-rows: auto 1fr auto; }
+
+html, body{ scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
+::-webkit-scrollbar{ width: 10px; height: 10px; }
+::-webkit-scrollbar-track{ background: transparent; }
+::-webkit-scrollbar-thumb{ background: var(--primary); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover{ filter: brightness(1.1); }
+
+/* Remove swatch-specific scrollbar styling (no horizontal scroll now) */
 
 
 
