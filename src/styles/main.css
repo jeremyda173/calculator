@@ -1,15 +1,8 @@
-/*
-  Calculator App Styles
-  Theme color: #16A085
-*/
-
-/* CSS Reset (minimal) */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; }
 button { font: inherit; }
 
-/* Add valid :root to ensure default variables apply */
 :root{
   --bg: #0f1214;
   --bg-2: #12171a;
@@ -26,7 +19,6 @@ button { font: inherit; }
   --shadow: 0 10px 30px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2);
 }
 
-/* Theme variants */
 .theme-teal{
   --bg: #0f1214;
   --bg-2: #12171a;
@@ -179,7 +171,6 @@ body{
 .btn:active{ transform: translateY(1px); box-shadow: 0 1px 0 rgba(0,0,0,.35); }
 .btn:focus{ outline: none; box-shadow: 0 0 0 2px rgba(22,160,133,.4), 0 2px 0 rgba(0,0,0,.35); }
 
-/* Variants */
 .btn--ghost{ background: transparent; border-color: rgba(255,255,255,.08); }
 .btn--ghost:hover{ background: rgba(255,255,255,.04); }
 
@@ -194,7 +185,6 @@ body{
 
 .app__footer{ margin-top: 18px; text-align: center; color: var(--muted); }
 
-/* Theme picker styles */
 .theme-picker{ margin-top: 8px; display: inline-grid; grid-auto-flow: column; gap: 8px; align-items: center; color: var(--muted); }
 .theme-picker label{ font-size: .85rem; }
 .theme-picker select{
@@ -205,11 +195,9 @@ body{
   padding: 6px 10px;
 }
 
-/* Pro visual theme picker (overrides) */
 .theme-picker{ margin-top: 12px; display: grid; gap: 12px; justify-items: center; color: var(--muted); }
 .theme-picker__swatches{ display: grid; gap: 16px; width: 100%; max-width: 900px; grid-template-columns: repeat(2, minmax(110px, 1fr)); }
 
-/* Swatch card */
 .swatch{ position: relative; display: grid; gap: 6px; padding: 8px; background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: 12px; cursor: pointer; user-select: none; }
 .swatch:hover{ border-color: rgba(255,255,255,.12); }
 .swatch input{ position: absolute; inset: 0; width: 1px; height: 1px; opacity: 0; }
@@ -217,18 +205,15 @@ body{
 .swatch__preview::before{ content: ""; position: absolute; inset-inline: 0; inset-block-end: 0; height: 12px; background: var(--tp-primary); opacity: .9; }
 .swatch__label{ text-align: center; font-size: .85rem; color: var(--text); opacity: .9; }
 
-/* Checked and focus states */
 .swatch input:checked + .swatch__preview{ box-shadow: 0 0 0 2px var(--tp-primary), inset 0 0 0 1px rgba(255,255,255,.08); }
 .swatch input:focus-visible + .swatch__preview{ outline: 2px solid var(--tp-primary); outline-offset: 3px; }
 
-/* Swatch theme previews */
 .swatch--teal{ --tp-primary: #16A085; --tp-bg: #0f1214; --tp-bg2: #12171a; }
 .swatch--rose{ --tp-primary: #e91e63; --tp-bg: #121015; --tp-bg2: #18121b; }
 .swatch--amber{ --tp-primary: #ffc107; --tp-bg: #15120c; --tp-bg2: #1b1710; }
 .swatch--violet{ --tp-primary: #8b5cf6; --tp-bg: #0f0e15; --tp-bg2: #13111c; }
 .swatch--sky{ --tp-primary: #38bdf8; --tp-bg: #0d1317; --tp-bg2: #0f1720; }
 
-/* Responsive tweaks */
 @media (min-width: 520px){
   .display__primary{ font-size: 2.6rem; }
   .calculator{ padding: 18px; }
@@ -269,8 +254,4 @@ html, body{ scrollbar-width: thin; scrollbar-color: var(--primary) transparent; 
 ::-webkit-scrollbar-track{ background: transparent; }
 ::-webkit-scrollbar-thumb{ background: var(--primary); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
 ::-webkit-scrollbar-thumb:hover{ filter: brightness(1.1); }
-
-/* Remove swatch-specific scrollbar styling (no horizontal scroll now) */
-
-
 
